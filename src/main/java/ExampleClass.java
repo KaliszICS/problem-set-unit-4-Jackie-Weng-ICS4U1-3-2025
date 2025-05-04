@@ -1,12 +1,14 @@
+//import 
+//import java.util.Scanner;
 public class Card { // https://www.geeksforgeeks.org/private-and-final-methods-in-java/
   private final String name; // private means that the variable can only be accessed from the class it is declared in
-  private final String suit; // final means it can only be assigned once
+  private final String types; // final means it can only be assigned once
   private final int value;   // using both makes them "immutable". let's say I want my card "banana" to stay "banana" for all time. this is useful
 
-  // card
-  public Card(String name, String suit, int value) {
+  
+  public Card(String name, String types, int value) {
     this.name = name;  // stores the value inside the variable
-    this.suit = suit;  // does the exact same thing again
+    this.types = types;  // does the exact same thing again, 
     this.value = value; // AGAIN!!!
   }
 
@@ -14,11 +16,20 @@ public class Card { // https://www.geeksforgeeks.org/private-and-final-methods-i
     return name;
   }
 
-  public String getSuit() { 
-    return suit;
+  public String gettypes() { // AGAIN!!!
+    return types;
   }
 
-  public int getValue() {
+  public int getValue() { //AGAIN!!! 
     return value;
   }
 }
+
+public String toString() {
+    return name + " of " + types;
+}
+
+public boolean equals(Object obj) {
+  if (this == obj) { // java is wierd and i have to use the word "this" for some reason. it just checks if the instance is the same as the object being compared
+    return true;
+  }
