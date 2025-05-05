@@ -33,3 +33,15 @@ public boolean equals(Object obj) {
   if (this == obj) { // java is wierd and i have to use the word "this" for some reason. it just checks if the instance is the same as the object being compared
     return true;
   }
+
+  if (obj == null || getClass() != obj.getClass()) {
+    return false;
+  }
+
+  public int hashCode() {
+    int result = name.hashCode();
+    result = 7 * result + types.hashCode();  // you can use any PRIME NUMBER. I just like the number 7. its the day my dog was born
+    result = 7 * result + value;
+    return result;
+  }
+}
