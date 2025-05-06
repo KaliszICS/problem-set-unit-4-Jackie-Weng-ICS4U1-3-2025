@@ -62,3 +62,6 @@ public class Deck {
     this.cards = new ArrayList<>();
     String[] types = {"H", "C", "D", "S"};
     String[] names = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+
+    for (String suit : suits) {
+      for (int value = 0)
