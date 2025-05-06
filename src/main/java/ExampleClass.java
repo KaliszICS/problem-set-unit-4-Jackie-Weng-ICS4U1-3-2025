@@ -1,4 +1,6 @@
-//import 
+import java.util.Collections;
+import java.util.ArrayList;
+import java.util.List;
 //import java.util.Scanner;
 public class Card { // https://www.geeksforgeeks.org/private-and-final-methods-in-java/
   private final String name; // private means that the variable can only be accessed from the class it is declared in
@@ -45,3 +47,11 @@ public boolean equals(Object obj) {
     return result;
   }
 }
+
+
+class Deck {
+  private List
+  
+
+  public Deck(Card[] Array) {
+
