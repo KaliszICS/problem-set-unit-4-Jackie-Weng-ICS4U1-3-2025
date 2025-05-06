@@ -32,7 +32,7 @@ public String toString() {
 }
 
 public boolean equals(Object obj) {
-  if (this == obj) { // java is wierd and i have to use the word "this" for some reason. it just checks if the instance is the same as the object being compared
+  if (this == obj) { // i have to use the word "this" for some reason. it just checks if the instance is the same as the object being compared
     return true;
   }
 
@@ -49,9 +49,16 @@ public boolean equals(Object obj) {
 }
 
 
-class Deck {
-  private List
+public class Deck {
+  private List<Card> cards;
+
   
+  public Deck(Card[] cardsArray) {
+    this.cards = new ArrayList<>();
+    Collections.addAll(this.cards, cardsArray);
+  }
 
-  public Deck(Card[] Array) {
-
+  public Deck() {
+    this.cards = new ArrayList<>();
+    String[] types = {"H", "C", "D", "S"};
+    String[] names = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
