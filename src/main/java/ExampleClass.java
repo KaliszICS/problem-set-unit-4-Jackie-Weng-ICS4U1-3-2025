@@ -18,18 +18,18 @@ public class Card { // https://www.geeksforgeeks.org/private-and-final-methods-i
     return name;
   }
 
-  public String gettypes() { // AGAIN!!!
+  public String getTypes() { // AGAIN!!!
     return types;
   }
 
   public int getValue() { //AGAIN!!! 
     return value;
   }
-}
+
 
 public String toString() {
     return name + " of " + types;
-}
+  }
 
 public boolean equals(Object obj) {
   if (this == obj) { // i have to use the word "this" for some reason. it just checks if the instance is the same as the object being compared
@@ -40,6 +40,9 @@ public boolean equals(Object obj) {
     return false;
   }
 
+  Card card = (Card) obj;
+  return value == card.value && name.equals(card.name) && types.equals(card.types);
+} 
   public int hashCode() {
     int result = name.hashCode();
     result = 7 * result + types.hashCode();  // you can use any PRIME NUMBER. I just like the number 7. its the day my dog was born
@@ -47,6 +50,7 @@ public boolean equals(Object obj) {
     return result;
   }
 }
+
 
 
 public class Deck {
@@ -65,7 +69,7 @@ public class Deck {
 
     for (String type : types) {
       for (int value = 0; value < names.length; value++) {
-        cards.add(new Card(name[value], type, value + 1));
+        cards.add(new Card(names[value], type, value + 1));
       }
     }
   }
@@ -73,6 +77,7 @@ public class Deck {
 
   public int size() {
     return cards.size();
+  }
 
   public Card draw() {
     if (cards.isEmpty()) {
