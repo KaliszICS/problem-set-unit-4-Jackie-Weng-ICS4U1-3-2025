@@ -2,10 +2,10 @@ import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
 //import java.util.Scanner;
-public class Card { // https://www.geeksforgeeks.org/private-and-final-methods-in-java/
-  private final String name; // private means that the variable can only be accessed from the class it is declared in
-  private final String types; // final means it can only be assigned once
-  private final int value;   // using both makes them "immutable". let's say I want my card "banana" to stay "banana" for all time. this is useful
+final class Card { // https://www.geeksforgeeks.org/private-and-final-methods-in-java/
+  private  String name; // private means that the variable can only be accessed from the class it is declared in
+  private  String types; // final means it can only be assigned once
+  private int value;   // using both makes them "immutable". let's say I want my card "banana" to stay "banana" for all time. this is useful
 
   
   public Card(String name, String types, int value) {
@@ -26,11 +26,11 @@ public class Card { // https://www.geeksforgeeks.org/private-and-final-methods-i
     return value;
   }
 
-
+@Override
 public String toString() {
     return name + " of " + types;
   }
-
+@Override
 public boolean equals(Object obj) {
   if (this == obj) { // i have to use the word "this" for some reason. it just checks if the instance is the same as the object being compared
     return true;
@@ -43,6 +43,7 @@ public boolean equals(Object obj) {
   Card card = (Card) obj;
   return value == card.value && name.equals(card.name) && types.equals(card.types);
 } 
+  @Override
   public int hashCode() {
     int result = name.hashCode();
     result = 7 * result + types.hashCode();  // you can use any PRIME NUMBER. I just like the number 7. its the day my dog was born
@@ -53,7 +54,7 @@ public boolean equals(Object obj) {
 
 
 
-public class Deck {
+class Deck {
   private List<Card> cards;
 
   
@@ -86,8 +87,10 @@ public class Deck {
     return cards.remove(0);
   }
 
-  public void shuffle() { ///https://www.geeksforgeeks.org/collections-shuffle-method-in-java-with-examples/
-    Collections.shuffle(cards); //shuffles the things in the list or the cards in this case
+  public void shuffle() { 
+    for (int i = cards.size() - 1; i > 0; i--) {
+      int x = (int)()
+    //Collections.shuffle(cards); 
   }
 
   public String toString() {
