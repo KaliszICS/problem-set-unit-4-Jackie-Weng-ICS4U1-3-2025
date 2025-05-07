@@ -89,9 +89,15 @@ class Deck {
 
   public void shuffle() { 
     for (int i = cards.size() - 1; i > 0; i--) {
-      int x = (int)()
-    //Collections.shuffle(cards); 
+      int x = (int)(Math.random() * (i+1));
+      Card temp = cards.get(i);
+      cards.set(i, cards.get(j));
+      cards.set(j,temp);
+    }
   }
+
+    //Collections.shuffle(cards); 
+  
 
   public String toString() {
     return cards.toString();
