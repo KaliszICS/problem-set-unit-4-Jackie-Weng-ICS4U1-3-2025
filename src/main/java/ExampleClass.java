@@ -80,7 +80,7 @@ public class Deck {
   }
 
   public Card draw() {
-    if (cards.isEmpty()) {
+    if (cards.isEmpty()) { //https://www.w3schools.com/java/ref_string_isempty.asp
       return null;
     }
     return cards.remove(0);
