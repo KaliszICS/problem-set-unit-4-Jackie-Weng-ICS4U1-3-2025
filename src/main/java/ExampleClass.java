@@ -80,3 +80,7 @@ public class Deck {
     }
     return cards.remove(0);
   }
+
+  public void shuffle() { ///https://www.geeksforgeeks.org/collections-shuffle-method-in-java-with-examples/
+    Collections.shuffle(cards); //shuffles the things in the list or the cards in this case
+  }
