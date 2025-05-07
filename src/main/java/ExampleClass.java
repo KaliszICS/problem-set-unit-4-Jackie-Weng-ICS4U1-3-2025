@@ -84,3 +84,8 @@ public class Deck {
   public void shuffle() { ///https://www.geeksforgeeks.org/collections-shuffle-method-in-java-with-examples/
     Collections.shuffle(cards); //shuffles the things in the list or the cards in this case
   }
+
+  public String toString() {
+    return cards.toString();
+  }
+ }
