@@ -55,7 +55,7 @@ public class Deck {
   
   public Deck(Card[] cardsArray) {
     this.cards = new ArrayList<>();
-    Collections.addAll(this.cards, cardsArray);
+    Collections.addAll(this.cards, cardsArray); //https://www.geeksforgeeks.org/java-util-arraylist-addall-method-java/
   }
 
   public Deck() {
@@ -63,5 +63,20 @@ public class Deck {
     String[] types = {"H", "C", "D", "S"};
     String[] names = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
 
-    for (String suit : suits) {
-      for (int value = 0)
+    for (String type : types) {
+      for (int value = 0; value < names.length; value++) {
+        cards.add(new Card(name[value], type, value + 1));
+      }
+    }
+  }
+
+
+  public int size() {
+    return cards.size();
+
+  public Card draw() {
+    if (cards.isEmpty()) {
+      return null;
+    }
+    return cards.remove(0);
+  }
