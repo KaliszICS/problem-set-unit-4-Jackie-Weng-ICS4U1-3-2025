@@ -1,5 +1,5 @@
 
-final class Card { // https://www.geeksforgeeks.org/private-and-final-methods-in-java/
+final class Card { 
   private  String name; // private means that the variable can only be accessed from the class it is declared in
   private  String types; // final means it can only be assigned once
   private int value;   // using both makes them "immutable". let's say I want my card "banana" to stay "banana" for all time. this is useful
