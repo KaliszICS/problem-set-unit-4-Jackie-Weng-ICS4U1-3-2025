@@ -7,19 +7,19 @@ final class Card {
   
   public Card(String name, String suits, int value) {
     this.name = name;  // stores the value inside the variable
-    this.suits = suits;  // does the exact same thing again, 
-    this.value = value; // again
+    this.suits = suits;  
+    this.value = value; 
   }
 
   public String getName() { // returns my values
     return name;
   }
 
-  public String getSuits() { // again
+  public String getSuits() {  
     return suits;
   }
 
-  public int getValue() { //again
+  public int getValue() { 
     return value;
   }
 
@@ -28,17 +28,17 @@ public String toString() { // string to string combine my names and suits. creat
     return name + " of " + suits; // all cards no matter what have a "of" in the middle. 
   }
 @Override
-public boolean equals(Object obj) { // checking if they are not null or their suits values and names
+public boolean equals(Object obj) { 
   if (this == obj) { // it just checks if the instance is the same as the object being compared
-    return true; //
+    return true; 
   } 
 
   if (obj == null || getClass() != obj.getClass()) { // checks if its null. if it is it just returns false to me
-    return false; // returns false if the check is true,
+    return false; /
   } 
 
   Card card = (Card) obj;
-  return value == card.value && name.equals(card.name) && suits.equals(card.suits); // checks if any 2 cards are equal, the value of the card depends on 3 things.
+  return value == card.value && name.equals(card.name) && suits.equals(card.suits); // checks if any 2 cards are equal, 
 } 
   }
 
