@@ -1,7 +1,7 @@
 //import java.util.ArrayList; 
 class Deck { 
   private Card[] cards; 
-  private int size;  
+  private int size;  // size is just  how many cards I have
 
   
 public Deck() {
@@ -9,7 +9,7 @@ public Deck() {
   String[] names = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"}; //simple array.
   int[] values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}; // the 13 values, Ace through king
   // this.cards = new Card[52]; // too Hard coded
-  cards = new Card[suits.length * names.length]; // you could hardcode it like the line above, but you could also just mulitply them to get 53
+  cards = new Card[suits.length * names.length]; // you could hardcode it like the line above, but you could also just mulitply them to get >=53
   size = 0; // starts at zero cards 
  
 

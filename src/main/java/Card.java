@@ -6,8 +6,10 @@ final class Card {
 
   
   public Card(String name, String suits, int value) {
+    this.suits = suits; 
+    
     this.name = name;  // stores the value inside the variable
-    this.suits = suits;  
+     
     this.value = value; 
   }
 
