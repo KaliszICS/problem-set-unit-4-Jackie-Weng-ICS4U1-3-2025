@@ -12,7 +12,7 @@ final class Card {
   }
 
   public String getName() { // returns my values
-    return name; // you can either return name or this.name. As long as you stay consistent. 
+    return name; // you can either return name or this.name. As long as you stay consistent it doesn't really matter
   }
 
   public String getSuits() {  
@@ -30,15 +30,15 @@ public String toString() { // string to string combine my names and suits. creat
 @Override
 public boolean equals(Object obj) { 
   if (obj == null || getClass() != obj.getClass()) { // checks if its null. if it is it just returns false to me
-    return false; 
+    return false; // instead of crashing it returns false. 
   } 
-
+  //checking memory just in case
   if (this == obj) { // it just checks if the instance is the same as the object being compared
     return true; 
   } 
 
-  Card card = (Card) obj;
-  return value == card.value && name.equals(card.name) && suits.equals(card.suits); // checks if any 2 cards are equal, 
+  Card card = (Card) obj; // first casting the obj to a card. you cant compare cards if one isnt a card.
+  return value == card.value && name.equals(card.name) && suits.equals(card.suits); // checks all 3 fields
 } 
   }
 

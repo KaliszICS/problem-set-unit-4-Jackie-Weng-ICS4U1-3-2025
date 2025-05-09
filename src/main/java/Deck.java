@@ -8,8 +8,9 @@ public Deck() {
   String[] suits = {"Hearts", "Clubs", "Diamonds", "Spades"}; // simple array 
   String[] names = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"}; //simple array.
   int[] values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}; // the 13 values, Ace through king
-  this.cards = new Card[52]; // 4 suits of 13 cards gives us 52 cards.
-  this.size = 0; // starts at zero cards 
+  // this.cards = new Card[52]; // too Hard coded
+  cards = new Card[suits.length * names.length]; // you could hardcode it like the line above, but you could also just mulitply them.
+  size = 0; // starts at zero cards 
  
 
   for (int x = 0; x < suits.length; x++) { // loops though each and every suit 
