@@ -27,7 +27,7 @@ public Deck() {
 }
 
 public int cardsize() { 
-  return cardslengths; // does exactly as it says. returns my cards sizes
+  return cardslengths; // does exactly as it says. returns my cards size
 }
 
 public Card drawingcards() {
