@@ -1,5 +1,5 @@
 //import
-class Deck { 
+class Deck { // my
   private Card[] cards; 
   private int cardslengths;  
 
@@ -15,13 +15,15 @@ class Deck {
 public Deck() {
   String[] suits = {"Hearts", "Clubs", "Diamonds", "Spades"}; // simple array 
   String[] names = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"}; //simple array.
+  int[] values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
   this.cards = new Card[52]; // 4 suits of 13 cards gives us just enough of 52 cards.
   this.cardslengths = 0; // starts at zero cards 
  
 
   for (int sx = 0; sx < suits.length; sx++) { // loops though each and every suit 
     for (int vr = 0; vr < names.length; vr++)  {  
-      cards[cardslengths++] = new Card(names[vr], suits[sx], vr + 1); // add a new card to my deck and tracks how many times one was added. without this you would eventually run outta cards.
+      int value = values[vr];
+      cards[cardslengths++] = new Card(names[vr], suits[sx], value); // add a new card to my deck and tracks how many times one was added. without this you would eventually run outta cards.
     }
   }
 }
