@@ -24,8 +24,8 @@ final class Card {
   }
 
 @Override
-public String toString() {
-    return name + " of " + types;
+public String toString() { // string to string combine my names and types. creates something like "Ace of Hearts" or "King of Spades"
+    return name + " of " + types; // all cards no matter what have a "of" in the middle. 
   }
 @Override
 public boolean equals(Object obj) {
@@ -38,13 +38,13 @@ public boolean equals(Object obj) {
   } 
 
   Card card = (Card) obj;
-  return value == card.value && name.equals(card.name) && types.equals(card.types);
+  return value == card.value && name.equals(card.name) && types.equals(card.types); // checks if any 2 cards are equal, the value of the card depends on 3 things.
 } 
   @Override
   public int hashCode() { //https://kiranukamath.medium.com/understanding-hashcode-and-equals-in-java-9041b1c418ef
     int result = name.hashCode();
     result = 7 * result + types.hashCode();  // you can use any PRIME NUMBER. I just like the number 7. its the day my dog was born
-    result = 7 * result + value;
+    result = 7 * result + value; //
     return result;
   }
 }
