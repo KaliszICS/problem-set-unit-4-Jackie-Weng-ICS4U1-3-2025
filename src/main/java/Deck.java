@@ -1,13 +1,13 @@
 //import
-class Deck { // my
+class Deck { 
   private Card[] cards; 
-  private int cardslengths;  
+  private int size;  
 
 
   public Deck(Card[] cardsArray) {
-    this.cardslengths = cardsArray.length; // from unit one. this simply just sets the number of cards of size of array.
-    this.cards = new Card[cardslengths];  // creates a new array 
-    for (int i = 0; i < cardslengths; i++) { 
+    this.size = cardsArray.length; // from unit one. this simply just sets the number of cards of size of array.
+    this.cards = new Card[size];  // creates a new array 
+    for (int i = 0; i < size; i++) { 
       this.cards[i] = cardsArray[i]; // copys the random array
     }
   }
@@ -16,42 +16,48 @@ public Deck() {
   String[] suits = {"Hearts", "Clubs", "Diamonds", "Spades"}; // simple array 
   String[] names = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"}; //simple array.
   int[] values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-  this.cards = new Card[52]; // 4 suits of 13 cards gives us just enough of 52 cards.
-  this.cardslengths = 0; // starts at zero cards 
+  this.cards = new Card[52]; // 4 suits of 13 cards gives us 52 cards.
+  this.size = 0; // starts at zero cards 
  
 
-  for (int sx = 0; sx < suits.length; sx++) { // loops though each and every suit 
-    for (int vr = 0; vr < names.length; vr++)  {  
-      int value = values[vr];
-      cards[cardslengths++] = new Card(names[vr], suits[sx], value); // add a new card to my deck and tracks how many times one was added. without this you would eventually run outta cards.
+  for (int x = 0; x < suits.length; x++) { // loops though each and every suit 
+    for (int y = 0; y < names.length; y++)  {  
+      int value = values[y];
+      cards[size++] = new Card(names[y], suits[x], value); 
     }
   }
 }
+//if you already have a deck and you want to put it in your deck
+public Deck(DupeCard[] icards) {
+  this.cards = new ArrayList<>();
+  if (icards != null) {
+    for (int i = 0; 1 < icards.length; i++) {
+      if (icards[i])
 
 public int cardsize() { 
-  return cardslengths; 
+  return size; 
 }
 
 public Card drawingcards() {
-  if (cardslengths == 0) { // checks if you have 0 cards, if you have zero cards, you arent playing anymore. 
+  if (size == 0) { // checks if you have 0 cards, if you have zero cards, you arent playing anymore. 
     return null;
   }
  
 Card topCard = cards[0]; // "0" is my top card in my array 
-for (int ysd = 1; ysd < cardslengths; ysd++) {
-  cards[ysd - 1] = cards[ysd]; //shifts every card one
+for (int y = 1; y < size; y++) {
+  cards[y - 1] = cards[y]; //shifts every card one
   }
-  cards[--cardslengths] = null; // reduce cards by one and sets it to null
+  cards[--size] = null; // reduce cards by one and sets it to null
   return topCard; // returns my top card or the one that was removed in the last line
 }
 
 
 public void shufflecards() { // shuffle class using math.random.
-  for (int ysd = cardslengths - 1; ysd > 0; ysd--) { // from unit one. starts the last index of the array and move backwards
-    int dsy = (int)(Math.random() * (ysd + 1)); // also from unit 1. math.random returns a double value
-    Card temp = cards[ysd]; // temp stores the card and index ysd
-    cards[ysd] = cards[dsy]; // randomly swaps them.
-    cards [dsy] = temp; // swaps the card at index dsy with the temp card above.
+  for (int y = size - 1; y > 0; y--) { // from unit one. starts the last index of the array and move backwards
+    int s = (int)(Math.random() * (y + 1)); // also from unit 1. math.random returns a double value
+    Card temp = cards[y]; // temp stores the card and index y
+    cards[y] = cards[s]; // randomly swaps them.
+    cards [s] = temp; // swaps the card at index dsy with the temp card above.
     }
   }
 }

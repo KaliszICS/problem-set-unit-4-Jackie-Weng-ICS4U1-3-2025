@@ -34,7 +34,7 @@ public boolean equals(Object obj) {
   } 
 
   if (obj == null || getClass() != obj.getClass()) { // checks if its null. if it is it just returns false to me
-    return false; /
+    return false; //
   } 
 
   Card card = (Card) obj;
