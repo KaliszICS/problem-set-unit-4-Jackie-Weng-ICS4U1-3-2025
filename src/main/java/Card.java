@@ -1,8 +1,8 @@
 //
 final class Card { 
-  private  String name; // private means that the variable can only be accessed from the class it is declared in
-  private  String suits; // final means it can only be assigned once
-  private int value;   // using both makes them "immutable". let's say I want my card "banana" to stay "banana" for all time. this is useful
+  private  final String name; // private means that the variable can only be accessed from the class it is declared in
+  private final String suits; // final means it can only be assigned once
+  private final int value;   // using both makes them "immutable". let's say I want my card "banana" to stay "banana" for all time. this is useful
 
   
   public Card(String name, String suits, int value) {
@@ -12,7 +12,7 @@ final class Card {
   }
 
   public String getName() { // returns my values
-    return name;
+    return name; // you can either return name or this.name. As long as you stay consistent. 
   }
 
   public String getSuits() {  
@@ -29,12 +29,12 @@ public String toString() { // string to string combine my names and suits. creat
   }
 @Override
 public boolean equals(Object obj) { 
-  if (this == obj) { // it just checks if the instance is the same as the object being compared
-    return true; 
+  if (obj == null || getClass() != obj.getClass()) { // checks if its null. if it is it just returns false to me
+    return false; 
   } 
 
-  if (obj == null || getClass() != obj.getClass()) { // checks if its null. if it is it just returns false to me
-    return false; //
+  if (this == obj) { // it just checks if the instance is the same as the object being compared
+    return true; 
   } 
 
   Card card = (Card) obj;

@@ -1,21 +1,13 @@
-//import
+//import java.util.ArrayList; 
 class Deck { 
   private Card[] cards; 
   private int size;  
 
-
-  public Deck(Card[] cardsArray) {
-    this.size = cardsArray.length; // from unit one. this simply just sets the number of cards of size of array.
-    this.cards = new Card[size];  // creates a new array 
-    for (int i = 0; i < size; i++) { 
-      this.cards[i] = cardsArray[i]; // copys the random array
-    }
-  }
-
+  
 public Deck() {
   String[] suits = {"Hearts", "Clubs", "Diamonds", "Spades"}; // simple array 
   String[] names = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"}; //simple array.
-  int[] values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+  int[] values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}; // the 13 values, Ace through king
   this.cards = new Card[52]; // 4 suits of 13 cards gives us 52 cards.
   this.size = 0; // starts at zero cards 
  
@@ -27,12 +19,17 @@ public Deck() {
     }
   }
 }
-//if you already have a deck and you want to put it in your deck
-public Deck(DupeCard[] icards) {
-  this.cards = new ArrayList<>();
-  if (icards != null) {
-    for (int i = 0; 1 < icards.length; i++) {
-      if (icards[i])
+
+
+
+  public Deck(Card[] cardsArray) {
+    this.size = cardsArray.length; // from unit one. this simply just sets the number of cards of size of array.
+    this.cards = new Card[size];  // creates a new array 
+    for (int i = 0; i < size; i++) { 
+      this.cards[i] = cardsArray[i]; // copys the random array
+    }
+  }
+
 
 public int cardsize() { 
   return size; 
