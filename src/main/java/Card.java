@@ -34,14 +34,14 @@ public boolean equals(Object obj) {
   }
 
   if (obj == null || getClass() != obj.getClass()) { // checks if its null. if it is it just returns false to me
-    return false; // returns false
+    return false; // returns false if the check is true,
   } 
 
   Card card = (Card) obj;
   return value == card.value && name.equals(card.name) && types.equals(card.types);
 } 
   @Override
-  public int hashCode() {
+  public int hashCode() { //https://kiranukamath.medium.com/understanding-hashcode-and-equals-in-java-9041b1c418ef
     int result = name.hashCode();
     result = 7 * result + types.hashCode();  // you can use any PRIME NUMBER. I just like the number 7. its the day my dog was born
     result = 7 * result + value;
