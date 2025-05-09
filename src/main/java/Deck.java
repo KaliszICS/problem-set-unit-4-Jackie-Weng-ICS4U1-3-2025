@@ -9,7 +9,7 @@ public Deck() {
   String[] names = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"}; //simple array.
   int[] values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}; // the 13 values, Ace through king
   // this.cards = new Card[52]; // too Hard coded
-  cards = new Card[suits.length * names.length]; // you could hardcode it like the line above, but you could also just mulitply them.
+  cards = new Card[suits.length * names.length]; // you could hardcode it like the line above, but you could also just mulitply them to get 53
   size = 0; // starts at zero cards 
  
 
@@ -24,10 +24,10 @@ public Deck() {
 
 
   public Deck(Card[] cardsArray) {
-    this.size = cardsArray.length; // from unit one. this simply just sets the number of cards of size of array.
-    this.cards = new Card[size];  // creates a new array 
+    size = cardsArray.length; // from unit one. this simply just sets the number of cards of size of array.
+    cards = new Card[size];  // creates a new array 
     for (int i = 0; i < size; i++) { 
-      this.cards[i] = cardsArray[i]; // copys the random array
+      cards[i] = cardsArray[i]; // copys the random array
     }
   }
 
@@ -40,14 +40,12 @@ public Card drawingcards() {
   if (size == 0) { // checks if you have 0 cards, if you have zero cards, you arent playing anymore. 
     return null;
   }
- 
-Card topCard = cards[0]; // "0" is my top card in my array 
-for (int y = 1; y < size; y++) {
-  cards[y - 1] = cards[y]; //shifts every card one
+//finding top card using a stack approach simiarly to the tower of hanoi
+Card topCard = cards[--size]; // decreases size and get the card at the new index, which is the "top" card
+ cards[size] = null; // you dont have to do this, but if you set the postion to null it saves a bit on memory
+ return topCard; // return the top card that was drawn. 
   }
-  cards[--size] = null; // reduce cards by one and sets it to null
-  return topCard; // returns my top card or the one that was removed in the last line
-}
+  
 
 
 public void shufflecards() { // shuffle class using math.random.
