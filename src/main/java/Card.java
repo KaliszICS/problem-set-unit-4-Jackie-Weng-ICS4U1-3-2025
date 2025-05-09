@@ -13,13 +13,15 @@ final class Card {
     this.value = value; 
   }
 
+  public String getSuits() {  
+    return suits;
+  }
+
   public String getName() { // returns my values
     return name; // you can either return name or this.name. As long as you stay consistent it doesn't really matter
   }
 
-  public String getSuits() {  
-    return suits;
-  }
+  
 
   public int getValue() { 
     return value;
@@ -31,8 +33,8 @@ public String toString() { // string to string combine my names and suits. creat
   }
 @Override
 public boolean equals(Object obj) { 
-  if (obj == null || getClass() != obj.getClass()) { // checks if its null. if it is it just returns false to me
-    return false; // instead of crashing it returns false. 
+  if (obj == null || getClass() != obj.getClass()) { // checks if its null. if it is it just returns false 
+    return false; // instead of crashing because of the null it returns false
   } 
   //checking memory just in case
   if (this == obj) { // it just checks if the instance is the same as the object being compared

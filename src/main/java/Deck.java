@@ -3,7 +3,7 @@ class Deck {
   private Card[] cards; 
   private int size;  // size is just  how many cards I have
 
-  
+ //creating a new array with methods from unit 1
 public Deck() {
   String[] suits = {"Hearts", "Clubs", "Diamonds", "Spades"}; // simple array 
   String[] names = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"}; //simple array.
@@ -12,7 +12,7 @@ public Deck() {
   cards = new Card[suits.length * names.length]; // you could hardcode it like the line above, but you could also just mulitply them to get >=53
   size = 0; // starts at zero cards 
  
-
+//looping
   for (int x = 0; x < suits.length; x++) { // loops though each and every suit 
     for (int y = 0; y < names.length; y++)  {  
       int value = values[y];
@@ -32,13 +32,13 @@ public Deck() {
   }
 
 
-public int cardsize() { 
+public int size() { 
   return size; 
 }
 
-public Card drawingcards() {
+public Card draw() {
   if (size == 0) { // checks if you have 0 cards, if you have zero cards, you arent playing anymore. 
-    return null;
+    return null; 
   }
 //finding top card using a stack approach simiarly to the tower of hanoi
 Card topCard = cards[--size]; // decreases size and get the card at the new index, which is the "top" card
@@ -47,8 +47,8 @@ Card topCard = cards[--size]; // decreases size and get the card at the new inde
   }
   
 
-
-public void shufflecards() { // shuffle class using math.random.
+// using math.random and loops to "shuffle cards"
+public void shuffle() { // shuffle class using math.random.
   for (int y = size - 1; y > 0; y--) { // from unit one. starts the last index of the array and move backwards
     int s = (int)(Math.random() * (y + 1)); // also from unit 1. math.random returns a double value
     Card temp = cards[y]; // temp stores the card and index y
