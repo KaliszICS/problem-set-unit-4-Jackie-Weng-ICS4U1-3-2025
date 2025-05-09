@@ -13,8 +13,8 @@ class Deck {
   }
 
 public Deck() {
-  String[] suits = {"Hearts", "Clubs", "Diamonds", "Spades"}; // simple array for the suits
-  String[] names = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"}; //simple array.
+  String[] suits = {"Hearts", "Clubs", "Diamonds", "Spades"}; // simple array for the suits. card hierarchy doesnt matter in this case, maybe in the future i can include card hierarchy
+  String[] names = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"}; //simple array. again card hierarchy doesnt matter
   this.cards = new Card[52]; // 52 gives us just enough space for all cards. 4 suits 13 cards gives us just enough of 52 cards.
   this.cardslengths = 0; // starts at zero cards first just in case.
  
