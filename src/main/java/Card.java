@@ -29,7 +29,7 @@ public String toString() { // string to string combine my names and suits. creat
   }
 @Override
 public boolean equals(Object obj) {
-  if (this == obj) { // i have to use the word "this" for some reason. it just checks if the instance is the same as the object being compared
+  if (this == obj) { // it just checks if the instance is the same as the object being compared
     return true;
   }
 
@@ -42,7 +42,7 @@ public boolean equals(Object obj) {
 } 
   @Override
   public int hashCode() { //https://kiranukamath.medium.com/understanding-hashcode-and-equals-in-java-9041b1c418ef
-    int result = name.hashCode();
+    int result = name.hashCode(); //
     result = 7 * result + suits.hashCode();  // you can use any PRIME NUMBER. I just like the number 7. its the day my dog was born
     result = 7 * result + value; //
     return result;

@@ -13,21 +13,21 @@ class Deck {
   }
 
 public Deck() {
-  String[] suits = {"H", "C", "D", "S"}; // simple array.
+  String[] suits = {"Hearts", "Clubs", "Diamonds", "Spades"}; // simple array for the suits
   String[] names = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"}; //simple array.
   this.cards = new Card[52]; // 52 gives us just enough space for all cards. 4 suits 13 cards gives us just enough of 52 cards.
   this.cardslengths = 0; // starts at zero cards first just in case.
  
 
-  for (int sx = 0; sx < suits.length; sx++) {
-    for (int vr = 0; vr < names.length; vr++)  {
-      cards[cardslengths++] = new Card(names[vr], suits[sx], vr + 1);
+  for (int sx = 0; sx < suits.length; sx++) { // loops though each suit from line 17.
+    for (int vr = 0; vr < names.length; vr++)  { // does the exact same thing but for the names now. 
+      cards[cardslengths++] = new Card(names[vr], suits[sx], vr + 1); // add a new card to my deck and tracks how many times one was added. without this you would eventually run outta cards.
     }
   }
 }
 
-public int cardslengths() {
-  return cardslengths;
+public int cardsize() {
+  return cardslengths; // does exactly as it says. returns my cards sizes
 }
 
 public Card drawingcards() {
@@ -35,12 +35,12 @@ public Card drawingcards() {
     return null;
   }
  
-Card topCard = cards[0];
+Card topCard = cards[0]; // 0 aka my top card in my array or the first in the array
 for (int ysd = 1; ysd < cardslengths; ysd++) {
-  cards[ysd - 1] = cards[ysd]; 
+  cards[ysd - 1] = cards[ysd]; //shifts every card one
   }
-  cards[--cardslengths] = null;
-  return topCard;
+  cards[--cardslengths] = null; // decreases size
+  return topCard; // returns my top card or the one that was removed in the last line
 }
 
 
