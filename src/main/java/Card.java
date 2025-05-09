@@ -1,4 +1,4 @@
-
+//
 final class Card { 
   private  String name; // private means that the variable can only be accessed from the class it is declared in
   private  String suits; // final means it can only be assigned once
