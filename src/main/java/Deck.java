@@ -2,22 +2,29 @@
 
 /* my deck class is just a normal standard deck of fully virtual cards */
 /* shuffles the cards without imports with math.random */
+/* Size: the # of cards in the deck.  */
 
 class Deck { 
   private Card[] cards; 
   private int size;  // size is just  how many cards I have
 
+//* String Arrays of suits and names */
+//* each card has a suit, a name and a value! */
+ 
+//creating a new array with methods from unit 1
 
- //creating a new array with methods from unit 1
 public Deck() {
   String[] suits = {"Hearts", "Clubs", "Diamonds", "Spades"}; // simple array 
   String[] names = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"}; //simple array.
   int[] values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}; // the 13 values, Ace through king
+  
   // this.cards = new Card[52]; // too Hard coded
+  
   cards = new Card[suits.length * names.length]; // you could hardcode it like the comment above, but you could also just mulitply them to get >=53
   size = 0; // starts at zero cards 
 
  
+  
 //looping
   for (int x = 0; x < suits.length; x++) { // loops though each and every suit 
     for (int y = 0; y < names.length; y++)  {  
@@ -27,6 +34,8 @@ public Deck() {
   }
 }
 
+
+/* @param Cardsarray, an array of cards */
 
 
   public Deck(Card[] cardsArray) {
@@ -38,11 +47,13 @@ public Deck() {
   }
 
 
-/* @returns the cards remaing */
+
+/* @return the cards remaing */
 
 public int size() { 
   return size; 
 }
+
 
 
 /* @return, the top card if there is one, otherwise you get a null */
@@ -52,7 +63,9 @@ public Card draw() {
     return null; 
   }
 
-  
+
+
+
 //*finding top card using a stack approach simiarly to the tower of hanoi *//
 Card topCard = cards[--size]; // decreases size and get the card at the new index, which is the "top" card
  cards[size] = null; // you dont have to do this, but if you set the postion to null it saves a bit on memory
@@ -60,8 +73,13 @@ Card topCard = cards[--size]; // decreases size and get the card at the new inde
   }
   
 
+
+
+
 /* Use Math.random to shuffle cards, */
 /* randomly swaps each card from end of array to front */
+
+
 
 public void shuffle() { // shuffle class using math.random.
   for (int y = size - 1; y > 0; y--) { // from unit one. starts the last index of the array and move backwards
