@@ -74,15 +74,11 @@ public int cardcount() {
 
 
 
-
+/* drawing cards */
 public Card draw() {
   if (cardcount == 0) { // checks if you have 0 cards, if you have zero cards, you aren't playing anymore. 
     return null; 
   }
-
-
-
-
 
 //*finding top card using a stack approach (familiar to the tower of hanoi) *//
 Card topCard = cards[--cardcount]; // decreases size and get the card at the new index, which is the "top" card
