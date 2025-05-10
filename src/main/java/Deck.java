@@ -25,7 +25,7 @@ class Deck {
 
 
 //* String Arrays of suits and names */
-//* each card has a suit, a name and a value! */
+//* each card has a suit, a name and a value */
  
 //creating a new array with methods from unit 1
 //* 53 total amount of cards in a deck */
@@ -62,7 +62,7 @@ public int cardcount() {
 
 
 
-/* @return, the top card if there is one, otherwise you get a null */
+/* @return, the top card if there is one, otherwise you get  null */
 
 public Card draw() {
   if (cardcount == 0) { // checks if you have 0 cards, if you have zero cards, you arent playing anymore. 

@@ -1,9 +1,9 @@
 /* Jackie Weng ISU4U
  *J. Kalisz
- /* First Problem Set (Cards) */
-/* Class is "immutable" I cant change anything*/
-/* Fri May 9th  */
-/* Giving playing cards a name, suit and their value */
+ /* First Problem Set (Cards). */
+/* Class is "immutable" I cant change anything.*/
+/* Fri May 9th.  */
+/* Giving playing cards a name, suit and their value. */
 
 final class Card { 
   private  final String name; // private means that the variable can only be accessed from the class it is declared in
@@ -16,7 +16,7 @@ final class Card {
  * Creating a card with 3 thing
  * * @param Suit, the suit/categories of the card. Something like a Heart or a spade
  * @param Name, the name of the card. something like a King or a Ace
- * @param Value, the hierarchy of the card/how much the card is worth compared to others
+ * @param Value, the hierarchy of the card or how much the card is worth compared to others
  */
   
   
@@ -31,7 +31,7 @@ final class Card {
 
 
 
-/* @return suit as a string so its actually readable */
+/* @return suit as a string so its readable */
 
   public String getSuits() {  
     return this.suits;
@@ -39,21 +39,21 @@ final class Card {
 
 
 
-/* @return return the name of the card also as a string */
+/* @return  the name of the card also as a string */
   public String getName() { // returns my values
     return this.name; // you can either return name or this.name. As long as you stay consistent it doesn't really matter
   }
 
 
 
-  /* @return return value of the card */
+  /* @return  value of the card */
 
   public int getValue() { 
     return this.value;
   }
 
 
-/* @return return the full name of the card */
+/* @return  the full name of the card */
 
 
 
