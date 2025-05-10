@@ -2,11 +2,11 @@
 
 /* my deck class is just a normal standard deck of fully virtual cards */
 /* shuffles the cards without imports with math.random */
-/* Size: the # of cards in the deck.  */
+/* cardcount: the # of cards in the deck.  */
 /* Also immutable, i cant modify anything */
 class Deck { 
   private Card[] cards; 
-  private int size;  // size is just  how many cards I have
+  private int cardcount;  // size is just  how many cards I have
 
 //* String Arrays of suits and names */
 //* each card has a suit, a name and a value! */
@@ -21,7 +21,7 @@ public Deck() {
   // this.cards = new Card[52]; // too Hard coded, 
   
   cards = new Card[suits.length * names.length]; // you could hardcode it like the comment above, but you could also just mulitply them to get 52
-  size = 0; // starts at zero cards 
+  cardcount = 0; // starts at zero cards 
 
  
   
@@ -29,7 +29,7 @@ public Deck() {
   for (int x = 0; x < suits.length; x++) { // loops though each and every suit 
     for (int y = 0; y < names.length; y++)  {  
       int value = values[y];
-      cards[size++] = new Card(names[y], suits[x], value); 
+      cards[cardcount++] = new Card(names[y], suits[x], value); 
     }
   }
 }
@@ -39,9 +39,9 @@ public Deck() {
 /* create a "deck" from a array of cards */
 
   public Deck(Card[] cardsArray) {
-    size = cardsArray.length; // from unit one. this simply just sets the number of cards of size of array.
-    cards = new Card[size];  // creates a new array 
-    for (int i = 0; i < size; i++) { 
+    cardcount = cardsArray.length; // from unit one. this simply just sets the number of cards of size of array.
+    cards = new Card[cardcount];  // creates a new array 
+    for (int i = 0; i < cardcount; i++) { 
       cards[i] = cardsArray[i]; // copys the random array
     }
   }
@@ -50,8 +50,8 @@ public Deck() {
 
 /* @return the cards remaing */
 
-public int size() { 
-  return size; 
+public int cardcount() { 
+  return cardcount; 
 }
 
 
@@ -59,7 +59,7 @@ public int size() {
 /* @return, the top card if there is one, otherwise you get a null */
 
 public Card draw() {
-  if (size == 0) { // checks if you have 0 cards, if you have zero cards, you arent playing anymore. 
+  if (cardcount == 0) { // checks if you have 0 cards, if you have zero cards, you arent playing anymore. 
     return null; 
   }
 
@@ -67,8 +67,8 @@ public Card draw() {
 
 
 //*finding top card using a stack approach (familiar to the tower of hanoi) *//
-Card topCard = cards[--size]; // decreases size and get the card at the new index, which is the "top" card
- cards[size] = null; // you dont have to do this, but if you set the postion to null it saves a bit on memory
+Card topCard = cards[--cardcount]; // decreases size and get the card at the new index, which is the "top" card
+ cards[cardcount] = null; // you dont have to do this, but if you set the postion to null it saves a bit on memory
  return topCard; // return the top card that was drawn. 
   }
   
@@ -82,7 +82,7 @@ Card topCard = cards[--size]; // decreases size and get the card at the new inde
 
 
 public void shuffle() { // shuffle class using math.random.
-  for (int y = size - 1; y > 0; y--) { // from unit one. starts the last index of the array and move backwards
+  for (int y = cardcount - 1; y > 0; y--) { // from unit one. starts the last index of the array and move backwards
     int s = (int)(Math.random() * (y + 1)); // also from unit 1. math.random returns a double value
     Card temp = cards[y]; // temp stores the card and index y
     cards[y] = cards[s]; // randomly swaps them.
