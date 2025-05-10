@@ -2,7 +2,7 @@
  *J. Kalisz
  /* First Problem Set (Cards) */
 /* Class is "immutable" I cant change anything*/
-
+/* Fri May 9th  */
 /* Giving playing cards a name, suit and their value */
 
 final class Card { 
