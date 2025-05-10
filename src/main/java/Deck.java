@@ -73,7 +73,7 @@ public int cardcount() {
 
 
 
-/* @return the top card if there is one */
+
 
 public Card draw() {
   if (cardcount == 0) { // checks if you have 0 cards, if you have zero cards, you aren't playing anymore. 
