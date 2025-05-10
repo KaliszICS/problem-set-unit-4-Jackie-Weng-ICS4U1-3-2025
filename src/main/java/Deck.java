@@ -5,7 +5,7 @@
 
 //import java.util.ArrayList; not needed as im not merging any 2 decks together. regular arrays are just fine.
 
-/* my deck class is just a normal standard deck of fully virtual cards */
+
 /* shuffles the cards without imports with math.random */
 /* cardcount: the # of cards in the deck.  */
 /* Also immutable, i cant modify anything */
@@ -38,10 +38,12 @@ class Deck {
 //* 53 total amount of cards in a deck */
 public Deck() {
   String[] suits = {"Hearts", "Clubs", "Diamonds", "Spades"}; 
+  
   String[] names = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"}; //simple array.
+
   int[] values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}; // the 13 values, Ace through king
   
-  // this.cards = new Card[52]; // too Hard coded, 
+  // this.cards = new Card[52]; // too Hard coded, leads to a magic number
   
 
   cards = new Card[suits.length * names.length]; // you could hardcode it like the comment above, but you could also just mulitply them to get 52
@@ -71,7 +73,7 @@ public int cardcount() {
 
 
 
-/* @return, the top card if there is one */
+/* @return the top card if there is one */
 
 public Card draw() {
   if (cardcount == 0) { // checks if you have 0 cards, if you have zero cards, you aren't playing anymore. 
@@ -84,7 +86,7 @@ public Card draw() {
 
 //*finding top card using a stack approach (familiar to the tower of hanoi) *//
 Card topCard = cards[--cardcount]; // decreases size and get the card at the new index, which is the "top" card
- cards[cardcount] = null; // you dont have to do this, but if you set the postion to null it saves on memory
+ cards[cardcount] = null; // you dont have to do this, but if you set the postion to null it saves on my memory
  return topCard; // return the top card that was drawn. 
   }
   
