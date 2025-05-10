@@ -8,6 +8,22 @@ class Deck {
   private Card[] cards; 
   private int cardcount;  // size is just  how many cards I have
 
+
+/* @param Cardsarray, an array of cards */
+/* create a "deck" from a array of cards */
+
+  public Deck(Card[] cardsArray) {
+    cardcount = cardsArray.length; // from unit one. this simply just sets the number of cards of size of array.
+    cards = new Card[cardcount];  // creates a new array 
+    for (int i = 0; i < cardcount; i++) { 
+      cards[i] = cardsArray[i]; // copys the random array
+    }
+  }
+
+
+
+
+
 //* String Arrays of suits and names */
 //* each card has a suit, a name and a value! */
  
@@ -35,16 +51,6 @@ public Deck() {
 }
 
 
-/* @param Cardsarray, an array of cards */
-/* create a "deck" from a array of cards */
-
-  public Deck(Card[] cardsArray) {
-    cardcount = cardsArray.length; // from unit one. this simply just sets the number of cards of size of array.
-    cards = new Card[cardcount];  // creates a new array 
-    for (int i = 0; i < cardcount; i++) { 
-      cards[i] = cardsArray[i]; // copys the random array
-    }
-  }
 
 
 

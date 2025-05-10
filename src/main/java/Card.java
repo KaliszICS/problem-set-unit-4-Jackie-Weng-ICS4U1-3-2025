@@ -1,3 +1,6 @@
+/* Jackie Weng ISU4U
+ *J. Kalisz
+ /* First Problem Set (Cards) */
 /* Class is "immutable" I cant change anything*/
 
 /* Giving playing cards a name, suit and their value */
